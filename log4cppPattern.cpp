@@ -24,9 +24,10 @@ void test0(){
     //记录器设置目的地
     cat.addAppender(pos);
 
-    //4.
+    //4.输出日志信息
     cat.error("this is an error msg");
 
+    //5.关闭记录器
     Category::shutdown();
 }
 
