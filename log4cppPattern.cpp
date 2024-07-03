@@ -66,7 +66,15 @@ int main()
     sub1.warn("sub1 warn");
     sub2.error("sub2 error");
     sub2.warn("sub2 warn");
-    sub11.error("sub11 error");
+    sub11.emerg("sub11:this is an emerg msg");
+    sub11.fatal("sub11:this is an fatal msg");
+    sub11.alert("sub11:this is an alert msg");
+    sub11.crit("sub11:this is an crit msg");
+    sub11.error("sub11:this is an error msg");
+    sub11.warn("sub11:this is an warn msg");
+    sub11.notice("sub11:this is an notice msg");
+    sub11.info("sub11:this is an info msg");
+    sub11.debug("sub11:this is an debug msg");
     
     //方式2
     sub11.warn("%d + %d == %s", 1, 1 ,"two");
