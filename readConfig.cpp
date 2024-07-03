@@ -1,18 +1,20 @@
 #include <log4cpp/Category.hh>
 #include <log4cpp/PropertyConfigurator.hh>
+#include <string>
+using namespace log4cpp;
+using std::string;
 
 int main()
 {
-	std::string initFileName = "log4cpp.properties";
-	log4cpp::PropertyConfigurator::configure(initFileName);
+    //要读取的配置文件名
+	string initFileName = "log4cpp.properties";
+	PropertyConfigurator::configure(initFileName);
 
-	log4cpp::Category& root = log4cpp::Category::getRoot();
+	Category & root = Category::getRoot();
 
-	log4cpp::Category& sub1 =
-		log4cpp::Category::getInstance(std::string("sub1"));
+	Category & sub1 = Category::getInstance(string("sub1"));
 
-	log4cpp::Category& sub2 =
-		log4cpp::Category::getInstance(std::string("sub1.sub2"));
+	Category & sub2 = Category::getInstance(string("sub1.sub2"));
 
 	root.warn("Storm is coming");
 
@@ -29,7 +31,7 @@ int main()
 
 	root.info("Ready for storm.");
 
-	log4cpp::Category::shutdown();
+	Category::shutdown();
 
 	return 0;
 }
